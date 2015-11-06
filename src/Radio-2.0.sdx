@@ -1,0 +1,165 @@
+A!	Radio-2.0.53739	2.0	Java
+
+X	c:01/000	com.ibm.saguaro.system.Assembly
+X	c:01/001	com.ibm.saguaro.system.Util
+X	c:01/002	com.ibm.saguaro.system.Timer
+X	c:01/003	com.ibm.saguaro.system.Time
+X	c:01/004	com.ibm.saguaro.system.MoteException
+X	c:01/005	com.ibm.saguaro.system.Device
+X	c:01/006	com.ibm.saguaro.system.SDev
+X	c:01/007	com.ibm.saguaro.system.CDev
+X	c:01/008	com.ibm.saguaro.system.OutOfResourcesException
+X	c:01/009	com.ibm.saguaro.system.OsException
+X	c:01/00A	com.ibm.saguaro.system.NullReferenceException
+X	c:01/00B	com.ibm.saguaro.system.SystemException
+X	c:01/00C	com.ibm.saguaro.system.Mote
+X	c:01/00D	com.ibm.saguaro.system.LIP
+X	c:01/00E	com.ibm.saguaro.system.LED
+X	c:01/00F	com.ibm.saguaro.system.InvalidCastException
+X	c:01/010	com.ibm.saguaro.system.IndexOutOfRangeException
+X	c:01/011	com.ibm.saguaro.system.I2C
+X	c:01/012	com.ibm.saguaro.system.GPIO
+X	c:01/013	com.ibm.saguaro.system.Err
+X	c:01/014	com.ibm.saguaro.system.DeviceException
+X	c:01/015	com.ibm.saguaro.system.SPI
+X	c:01/016	com.ibm.saguaro.system.Radio
+X	c:01/017	com.ibm.saguaro.system.WLIP
+X	c:01/018	com.ibm.saguaro.system.ArrayTypeMismatchException
+X	c:01/019	com.ibm.saguaro.system.ArithmException
+X	c:01/01A	com.ibm.saguaro.system.ArgumentException
+X	c:01/01B	com.ibm.saguaro.system.AccessException
+X	c:01/01C	com.ibm.saguaro.system.ADC
+X	c:02/000	com.ibm.saguaro.logger.Logger
+
+C!	c:004	embs.RadioTest	-1	0	c:000
+R	tsend	r:com.ibm.saguaro.system.Timer	0	0
+R	xmit	c[]	0	1
+R	radio	r:com.ibm.saguaro.system.Radio	0	2
+F	xmitDelay	l	0	0
+M!	RadioTest(r:embs.RadioTest)v	-1	m:0066	000CC	4
+M	access$000(i,c[],i,i,l)i	-1	m:0068	000D0	14
+M	onReceive(i,c[],i,i,l)i	-1	m:006F	000DE	50
+M!	periodicSend(c,l)v	-1	m:0088	00110	34
+
+C	c:006	com.ibm.saguaro.system.$tatics	-1	-1	c:01/000
+r	embs.RadioTest.tsend	r:com.ibm.saguaro.system.Timer	-1	0
+r	embs.RadioTest.xmit	c[]	-1	1
+r	embs.RadioTest.radio	r:com.ibm.saguaro.system.Radio	-1	2
+f	embs.RadioTest.xmitDelay	l	-1	0
+M	__init()v	-1	m:0010	00020	172
+
+c	0002D	0	10	0	10	0	m:0010
+c	00037	0	14	0	14	0	m:0010
+c	00043	0	16	0	16	0	m:0010
+c	0004C	0	17	0	17	0	m:0010
+c	00054	0	19	0	19	0	m:0010
+c	0005A	0	20	0	20	0	m:0010
+c	00060	0	21	0	21	0	m:0010
+c	00068	0	22	0	22	0	m:0010
+c	00072	0	23	0	23	0	m:0010
+c	0007C	0	25	0	25	0	m:0010
+c	00083	0	26	0	26	0	m:0010
+c	0008D	0	32	0	32	0	m:0010
+c	000A2	0	34	0	34	0	m:0010
+c	000AC	0	35	0	35	0	m:0010
+c	000B6	0	42	0	42	0	m:0010
+c	000C2	0	44	0	44	0	m:0010
+c	000CB	0	45	0	45	0	m:0010
+e	000CC	m:0010
+c	000CF	0	5	0	5	0	m:0066
+l!	000CF	000D0	r:embs.RadioTest	this	m:0066	0
+e!	000D0	m:0066
+c	000D3	0	5	0	5	0	m:0068
+l	000D3	000DD	i	x0	m:0068	0
+l	000D3	000DD	c[]	x1	m:0068	1
+l	000D3	000DD	i	x2	m:0068	2
+l	000D3	000DD	i	x3	m:0068	3
+l	000D3	000DD	l	x4	m:0068	4
+e	000DE	m:0068
+c	000E1	0	48	0	48	0	m:006F
+l	000E1	00110	i	flags	m:006F	0
+l	000E1	00110	c[]	data	m:006F	1
+l	000E1	00110	i	len	m:006F	2
+l	000E1	00110	i	info	m:006F	3
+l	000E1	00110	l	time	m:006F	4
+c	000E4	0	50	0	50	0	m:006F
+c	000F9	0	51	0	51	0	m:006F
+c	000FB	0	54	0	54	0	m:006F
+c	00102	0	55	0	55	0	m:006F
+c	00109	0	57	0	57	0	m:006F
+c	0010E	0	58	0	58	0	m:006F
+e	00110	m:006F
+c	00113	0	63	0	63	0	m:0088
+l!	00113	00131	c	param	m:0088	0
+l!	00113	00131	l	time	m:0088	1
+c	00127	0	65	0	65	0	m:0088
+c	00130	0	66	0	66	0	m:0088
+e!	00132	m:0088
+S	C:/Users/eh819/workspace/embs/src/embs/RadioTest.java
+:	package embs;
+:	
+:	import com.ibm.saguaro.system.*;
+:	
+:	public class RadioTest {
+:	
+:		private static Timer tsend;
+:		private static byte[] xmit;
+:		private static long xmitDelay;
+:		static Radio radio = new Radio();
+:		
+:		static {
+:			// Open the default radio
+:			radio.open(Radio.DID, null, 0, 0);
+:			// Set the PAN ID to 0x22 and the short address to 0x31
+:			radio.setPanId(0x22, true);
+:			radio.setShortAddr(0x31);
+:			// Prepare beacon frame with source addressing
+:			xmit = new byte[7];
+:			xmit[0] = Radio.FCF_BEACON;
+:			xmit[1] = Radio.FCA_SRC_SADDR;
+:			Util.set16le(xmit, 3, 0x22);
+:			Util.set16le(xmit, 5, 0x31);
+:			// Put radio into receive mode for a long time on channel 1
+:			radio.setChannel((byte)1);
+:			radio.setRxHandler(new DevCallback(null){
+:				public int invoke (int flags, byte[] data, int len, int info, long time) {
+:					return RadioTest.onReceive(flags, data, len, info, time);
+:				}
+:			});
+:		
+:			radio.startRx(Device.ASAP, 0, Time.currentTicks()+0x7FFFFFFF);
+:			// Setup a periodic timer callback for transmissions
+:			tsend = new Timer();
+:			tsend.setCallback(new TimerEvent(null){
+:				public void invoke(byte param, long time){
+:					RadioTest.periodicSend(param, time);
+:				}
+:			});
+:		
+:			// Convert the periodic delay from ms to platform ticks
+:			xmitDelay = Time.toTickSpan(Time.MILLISECS, 2500);
+:			// Start the timer
+:			tsend.setAlarmBySpan(xmitDelay);
+:		}
+:		// On a received frame toggle LED
+:		private static int onReceive (int flags, byte[] data, int len, int info, long time) {
+:			if (data == null) { // marks end of reception period
+:			// re-enable reception for a very long time
+:			radio.startRx(Device.ASAP, 0, Time.currentTicks()+0x7FFFFFFF);
+:			return 0;
+:			}
+:		
+:			if (LED.getState((byte)0) == 1)
+:				 LED.setState((byte)0, (byte)0);
+:				 else
+:				 LED.setState((byte)0, (byte)1);
+:				return 0;
+:			}
+:		// Called on a timer alarm
+:		public static void periodicSend(byte param, long time) {
+:			// send the message
+:			radio.transmit(Device.ASAP|Radio.TXMODE_CCA, xmit, 0, 7, 0);
+:			// Setup a new alarm
+:			tsend.setAlarmBySpan(xmitDelay);
+:		}
+:	}

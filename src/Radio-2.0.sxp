@@ -1,0 +1,15 @@
+.sxp-version 2.0
+
+.assembly Radio-2.0
+
+
+.namespace embs
+
+.class#0 public RadioTest
+
+	.method#0 static public RadioTest(r:embs.RadioTest this)v
+
+	.method#1 static public periodicSend(c param, l time)v
+.end
+
+.end

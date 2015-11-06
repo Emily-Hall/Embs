@@ -1,0 +1,24 @@
+.sxp-version 2.0
+
+.assembly Radio-1.0
+
+
+.namespace embs
+
+.class#0 public RadioTest
+
+	.method#0 static public RadioTest(r:embs.RadioTest this)v
+
+	.method#1 static public periodicSend(c param, l time)v
+.end
+
+
+.class#1 public BlinkLED
+
+	.method#2 static public BlinkLED(r:embs.BlinkLED this)v
+
+	;;! Callback for the timer
+	.method#3 static public fire(c param, l time)v
+.end
+
+.end

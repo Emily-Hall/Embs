@@ -1,0 +1,260 @@
+A!	Radio-1.0.51913	2.0	Java
+
+X	c:01/000	com.ibm.saguaro.system.Assembly
+X	c:01/001	com.ibm.saguaro.system.Util
+X	c:01/002	com.ibm.saguaro.system.Timer
+X	c:01/003	com.ibm.saguaro.system.Time
+X	c:01/004	com.ibm.saguaro.system.MoteException
+X	c:01/005	com.ibm.saguaro.system.Device
+X	c:01/006	com.ibm.saguaro.system.SDev
+X	c:01/007	com.ibm.saguaro.system.CDev
+X	c:01/008	com.ibm.saguaro.system.OutOfResourcesException
+X	c:01/009	com.ibm.saguaro.system.OsException
+X	c:01/00A	com.ibm.saguaro.system.NullReferenceException
+X	c:01/00B	com.ibm.saguaro.system.SystemException
+X	c:01/00C	com.ibm.saguaro.system.Mote
+X	c:01/00D	com.ibm.saguaro.system.LIP
+X	c:01/00E	com.ibm.saguaro.system.LED
+X	c:01/00F	com.ibm.saguaro.system.InvalidCastException
+X	c:01/010	com.ibm.saguaro.system.IndexOutOfRangeException
+X	c:01/011	com.ibm.saguaro.system.I2C
+X	c:01/012	com.ibm.saguaro.system.GPIO
+X	c:01/013	com.ibm.saguaro.system.Err
+X	c:01/014	com.ibm.saguaro.system.DeviceException
+X	c:01/015	com.ibm.saguaro.system.SPI
+X	c:01/016	com.ibm.saguaro.system.Radio
+X	c:01/017	com.ibm.saguaro.system.WLIP
+X	c:01/018	com.ibm.saguaro.system.ArrayTypeMismatchException
+X	c:01/019	com.ibm.saguaro.system.ArithmException
+X	c:01/01A	com.ibm.saguaro.system.ArgumentException
+X	c:01/01B	com.ibm.saguaro.system.AccessException
+X	c:01/01C	com.ibm.saguaro.system.ADC
+X	c:02/000	com.ibm.saguaro.logger.Logger
+
+C!	c:005	embs.RadioTest	-1	0	c:000
+R	tsend	r:com.ibm.saguaro.system.Timer	0	0
+R	xmit	c[]	0	1
+R	radio	r:com.ibm.saguaro.system.Radio	0	2
+F	xmitDelay	l	0	0
+M!	RadioTest(r:embs.RadioTest)v	-1	m:009D	0013A	4
+M	access$000(i,c[],i,i,l)i	-1	m:009F	0013E	14
+M	onReceive(i,c[],i,i,l)i	-1	m:00A6	0014C	50
+M!	periodicSend(c,l)v	-1	m:00BF	0017E	34
+
+C!	c:007	embs.BlinkLED	1	1	c:000
+R	timer	r:com.ibm.saguaro.system.Timer	1	3
+F	INTERVAL	l	1	2
+M!	BlinkLED(r:embs.BlinkLED)v	1	m:0081	00102	4
+M!	fire(c,l)v	1	m:0083	00106	52
+
+C	c:009	com.ibm.saguaro.system.$tatics	-1	-1	c:01/000
+r	embs.RadioTest.tsend	r:com.ibm.saguaro.system.Timer	-1	0
+r	embs.RadioTest.xmit	c[]	-1	1
+r	embs.RadioTest.radio	r:com.ibm.saguaro.system.Radio	-1	2
+r	embs.BlinkLED.timer	r:com.ibm.saguaro.system.Timer	-1	3
+f	embs.RadioTest.xmitDelay	l	-1	0
+f	embs.BlinkLED.INTERVAL	l	-1	2
+M	__init()v	-1	m:0016	0002C	214
+
+c	00039	0	10	0	10	0	m:0016
+c	00043	0	14	0	14	0	m:0016
+c	0004F	0	16	0	16	0	m:0016
+c	00058	0	17	0	17	0	m:0016
+c	00060	0	19	0	19	0	m:0016
+c	00066	0	20	0	20	0	m:0016
+c	0006C	0	21	0	21	0	m:0016
+c	00074	0	22	0	22	0	m:0016
+c	0007E	0	23	0	23	0	m:0016
+c	00088	0	25	0	25	0	m:0016
+c	0008F	0	26	0	26	0	m:0016
+c	00099	0	32	0	32	0	m:0016
+c	000AE	0	34	0	34	0	m:0016
+c	000B8	0	35	0	35	0	m:0016
+c	000C2	0	42	0	42	0	m:0016
+c	000CE	0	44	0	44	0	m:0016
+c	000D7	1	16	0	16	0	m:0016
+c	000E1	1	22	0	22	0	m:0016
+c	000EB	1	31	0	31	0	m:0016
+c	000F7	1	34	0	34	0	m:0016
+c	00100	1	38	0	38	0	m:0016
+e	00102	m:0016
+c	00105	1	6	0	6	0	m:0081
+l!	00105	00106	r:embs.BlinkLED	this	m:0081	0
+e!	00106	m:0081
+c	00109	1	50	0	50	0	m:0083
+l!	00109	0013A	c	param	m:0083	0
+l!	00109	0013A	l	time	m:0083	1
+c	00110	1	51	0	51	0	m:0083
+c	00115	1	52	0	52	0	m:0083
+c	0011A	1	53	0	53	0	m:0083
+c	00121	1	57	0	57	0	m:0083
+c	00126	1	58	0	58	0	m:0083
+c	0012B	1	59	0	59	0	m:0083
+c	00130	1	63	0	63	0	m:0083
+c	00139	1	64	0	64	0	m:0083
+e!	0013A	m:0083
+c	0013D	0	5	0	5	0	m:009D
+l!	0013D	0013E	r:embs.RadioTest	this	m:009D	0
+e!	0013E	m:009D
+c	00141	0	5	0	5	0	m:009F
+l	00141	0014B	i	x0	m:009F	0
+l	00141	0014B	c[]	x1	m:009F	1
+l	00141	0014B	i	x2	m:009F	2
+l	00141	0014B	i	x3	m:009F	3
+l	00141	0014B	l	x4	m:009F	4
+e	0014C	m:009F
+c	0014F	0	48	0	48	0	m:00A6
+l	0014F	0017E	i	flags	m:00A6	0
+l	0014F	0017E	c[]	data	m:00A6	1
+l	0014F	0017E	i	len	m:00A6	2
+l	0014F	0017E	i	info	m:00A6	3
+l	0014F	0017E	l	time	m:00A6	4
+c	00152	0	50	0	50	0	m:00A6
+c	00167	0	51	0	51	0	m:00A6
+c	00169	0	54	0	54	0	m:00A6
+c	00170	0	55	0	55	0	m:00A6
+c	00177	0	57	0	57	0	m:00A6
+c	0017C	0	58	0	58	0	m:00A6
+e	0017E	m:00A6
+c	00181	0	63	0	63	0	m:00BF
+l!	00181	0019F	c	param	m:00BF	0
+l!	00181	0019F	l	time	m:00BF	1
+c	00195	0	65	0	65	0	m:00BF
+c	0019E	0	66	0	66	0	m:00BF
+e!	001A0	m:00BF
+S	C:/Users/eh819/workspace/embs/src/embs/RadioTest.java
+:	package embs;
+:	
+:	import com.ibm.saguaro.system.*;
+:	
+:	public class RadioTest {
+:	
+:		private static Timer tsend;
+:		private static byte[] xmit;
+:		private static long xmitDelay;
+:		static Radio radio = new Radio();
+:		
+:		static {
+:			// Open the default radio
+:			radio.open(Radio.DID, null, 0, 0);
+:			// Set the PAN ID to 0x22 and the short address to 0x31
+:			radio.setPanId(0x22, true);
+:			radio.setShortAddr(0x31);
+:			// Prepare beacon frame with source addressing
+:			xmit = new byte[7];
+:			xmit[0] = Radio.FCF_BEACON;
+:			xmit[1] = Radio.FCA_SRC_SADDR;
+:			Util.set16le(xmit, 3, 0x22);
+:			Util.set16le(xmit, 5, 0x31);
+:			// Put radio into receive mode for a long time on channel 1
+:			radio.setChannel((byte)1);
+:			radio.setRxHandler(new DevCallback(null){
+:				public int invoke (int flags, byte[] data, int len, int info, long time) {
+:					return RadioTest.onReceive(flags, data, len, info, time);
+:				}
+:			});
+:		
+:			radio.startRx(Device.ASAP, 0, Time.currentTicks()+0x7FFFFFFF);
+:			// Setup a periodic timer callback for transmissions
+:			tsend = new Timer();
+:			tsend.setCallback(new TimerEvent(null){
+:				public void invoke(byte param, long time){
+:					RadioTest.periodicSend(param, time);
+:				}
+:			});
+:		
+:			// Convert the periodic delay from ms to platform ticks
+:			xmitDelay = Time.toTickSpan(Time.MILLISECS, 2500);
+:			// Start the timer
+:			tsend.setAlarmBySpan(xmitDelay);
+:		}
+:		// On a received frame toggle LED
+:		private static int onReceive (int flags, byte[] data, int len, int info, long time) {
+:			if (data == null) { // marks end of reception period
+:			// re-enable reception for a very long time
+:			radio.startRx(Device.ASAP, 0, Time.currentTicks()+0x7FFFFFFF);
+:			return 0;
+:			}
+:		
+:			if (LED.getState((byte)0) == 1)
+:				 LED.setState((byte)0, (byte)0);
+:				 else
+:				 LED.setState((byte)0, (byte)1);
+:				return 0;
+:			}
+:		// Called on a timer alarm
+:		public static void periodicSend(byte param, long time) {
+:		// send the message
+:		radio.transmit(Device.ASAP|Radio.TXMODE_CCA, xmit, 0, 7, 0);
+:		// Setup a new alarm
+:		tsend.setAlarmBySpan(xmitDelay);
+:		}
+:	}
+S	C:/Users/eh819/workspace/embs/src/embs/BlinkLED.java
+:	package embs;
+:	
+:	import com.ibm.saguaro.system.*;
+:	import com.ibm.saguaro.logger.*;
+:	
+:	public class BlinkLED {
+:	
+:		// timer
+:	    static Timer timer;
+:	    // timer interval in ticks
+:	    static long INTERVAL;
+:	
+:	    static {
+:	
+:	        // instantiante a new timer
+:	        timer = new Timer();
+:	
+:	        // set the callback for the timer
+:	        // i.e. when the timer ticks, it should call the "fire()"
+:		// method of this class
+:	
+:	        timer.setCallback(new TimerEvent(null){
+:	                public void invoke(byte param, long time){
+:	                    BlinkLED.fire(param, time);
+:	                }
+:	            });
+:	
+:	
+:	
+:	        // convert 2 seconds into platform ticks
+:	        INTERVAL = Time.toTickSpan(Time.SECONDS, 2);
+:	
+:	        // set a new alarm in 2 seconds from now
+:	        timer.setAlarmBySpan(INTERVAL);
+:	
+:	
+:	
+:	 	}
+:	
+:	
+:	
+:	     /**
+:	     * Callback for the timer
+:	     */
+:	
+:	    public static void fire (byte param, long time) {
+:	
+:	        // Check and toggle the state of the first LED of the mote (index 0)
+:	        
+:	        if (LED.getState((byte)0) == 1 ) {
+:	            LED.setState((byte)0, (byte)0);
+:	            LED.setState((byte)1, (byte)0);
+:	            LED.setState((byte)2, (byte)0);
+:	            
+:	            }
+:	        else {
+:	            LED.setState((byte)0, (byte)1);
+:	            LED.setState((byte)1, (byte)1);
+:	            LED.setState((byte)2, (byte)1);
+:			}
+:			
+:	        // Setup a new timer alarm
+:	        timer.setAlarmBySpan(INTERVAL);
+:	    }
+:	
+:	
+:	}

@@ -1,0 +1,16 @@
+.sxp-version 2.0
+
+.assembly LED-1.0
+
+
+.namespace embs
+
+.class#0 public BlinkLED
+
+	.method#0 static public BlinkLED(r:embs.BlinkLED this)v
+
+	;;! Callback for the timer
+	.method#1 static public fire(c param, l time)v
+.end
+
+.end
